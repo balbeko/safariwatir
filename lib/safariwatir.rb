@@ -52,7 +52,12 @@ module Watir
         raise ArgumentError, "Invalid speed: #{how_fast}"
       end
     end
-
+    
+    def set_custom_speed=(lag)
+      @scripter.typing_lag = lag
+    end
+    
+    
     module Clickable
       def click
         @scripter.highlight(self) do
